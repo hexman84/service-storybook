@@ -25,11 +25,13 @@
     text-align center
     white-space nowrap
     transition border-color 0.2s, background-color 0.2s, color 0.2s ease-out
-    color var(--geist-background)
+    //color var(--geist-background)
     border 1px solid var(--geist-foreground-color)
-    background-color var(--geist-foreground-color)
+    //background-color var(--geist-foreground-color)
     text-decoration none
     letter-spacing 0.2px
+    background-color #536EFC
+    color #FFFFFF 
     &.-mini
         padding 0 1rem
         font-size (14 / 16)rem
@@ -41,10 +43,9 @@
             top 0.3rem
     &.-stext
         font-family 'SText', $textnormal
-    &:hover
-        color var(--geist-foreground-color)
-        border 1px solid var(--geist-foreground-color)
-        background var(--geist-background)
+    &:hover, &.-hover
+        color #FFFFFF
+        background-color #6B83FF 
     &.-white
         color var(--accents-2)
         border-color var(--border-color)
@@ -57,6 +58,7 @@
             background-color var(--accents-5)
         &:focus
             box-shadow 0 0 0 0.2rem var(--accents-7)
+     
     &.-blue
         color var(--foreground-color)
         border-color var(--geist-success)
@@ -125,6 +127,13 @@
         padding 0
         margin 0
         letter-spacing -0.1px
+    &:active, &.-active 
+        color #FFFFFF
+        background-color #334ED9
+    
+    &:focused
+        background-color #536EFC
+        color #FFFFFF
     &:before
         content ' '
         position absolute
@@ -141,3 +150,4 @@
         width 120%
         padding-top 120%
         transition width 0.2s ease-out, padding-top 0.2s ease-out
+        
