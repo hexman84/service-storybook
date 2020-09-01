@@ -1,14 +1,12 @@
-    <template lang="pug">
-    button(class="sec-button" :class="[{'-disabled':dataDisabled, '-blue':dataBlue, '-red':dataRed,'-active': dataActive,'-hover':dataHover},dataSize]")
+<template lang="pug">
+    button(class="grup-button" :class="[{'-disabled':dataDisabled, '-blue':dataBlue, '-red':dataRed,'-active': dataActive,'-hover':dataHover},dataSize]")
         span
             slot Test
 </template>
 
 <script lang="ts">
-import './secondary-button.styl'
-
+import './group-buttons.styl'
 import { defineComponent } from '@vue/composition-api'
-
 export default defineComponent({
     props: { 
         dataHover:{

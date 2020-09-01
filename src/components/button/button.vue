@@ -1,5 +1,5 @@
-<template lang="pug">
-    button(class="b-button" :class="{'-disabled':dataDisabled, '-blue':dataBlue, '-red':dataRed,'-active': dataActive,'-hover':dataHover,'-still':dataStill}")
+    <template lang="pug">
+    button(class="b-button" :class="[{'-disabled':dataDisabled, '-blue':dataBlue, '-red':dataRed,'-active': dataActive,'-hover':dataHover},dataSize]")
         span
             slot Test
 </template>
@@ -11,10 +11,6 @@ import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
     props: {
-        dataStill:{
-            type: Boolean,
-            default: false
-        },
         dataHover:{
             type: Boolean,
             default: false
@@ -34,6 +30,10 @@ export default defineComponent({
         dataRed: {
             type: Boolean,
             default: false
+        },
+        dataSize: {
+            type: String,
+            default: ''
         }
     }
 })

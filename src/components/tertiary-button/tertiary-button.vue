@@ -1,11 +1,11 @@
-    <template lang="pug">
-    button(class="sec-button" :class="[{'-disabled':dataDisabled, '-blue':dataBlue, '-red':dataRed,'-active': dataActive,'-hover':dataHover},dataSize]")
+<template lang="pug">
+    button(class="ter-button" :class="[{'-disabled':dataDisabled, '-blue':dataBlue, '-red':dataRed,'-active': dataActive,'-hover':dataHover},dataSize]")
         span
             slot Test
 </template>
 
 <script lang="ts">
-import './secondary-button.styl'
+import './tertiary-button.styl'
 
 import { defineComponent } from '@vue/composition-api'
 

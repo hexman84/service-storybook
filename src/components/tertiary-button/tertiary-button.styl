@@ -2,7 +2,8 @@
 @require '~@/css/placeholder'
 @require '~@/css/variables'
 
-.sec-button
+.ter-button
+    outline: none
     position: relative
     height: 44px
     width 127px
@@ -15,22 +16,18 @@
     font-weight: 600
     font-size: 16px
     line-height: 22px
-    border: 1px solid #536EFC
-    box-sizing: border-box
-    background-color #E5E5E5
+    background-color #FFFFFF
     border-radius: 8px
     color #536EFC
+    border: 2px solid #FFFFFF
     &:hover, &.-hover
-        border: 1px solid #6B83FF   
         color #6B83FF
         border-radius: 8px
     &:active, &.-active 
         color   #334ED9
-        border: 1px solid #334ED9
         border-radius: 8px
     &:disabled, &.-disabled
         color #C2CFE0
-        border: 1px solid #C2CFE0
         border-radius: 8px
     &.-n 
         padding 0 1rem
@@ -52,4 +49,5 @@
         font-size (11 / 16)rem
         line-height (22 / 16)rem
         height (30 / 16)rem
-        font-family: SF Pro Text
+        font-family: SF Pro Text 
+        
