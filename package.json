@@ -34,6 +34,7 @@
     "css-loader": "^4.2.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "feather-icons": "^4.28.0",
     "file-loader": "^6.0.0",
     "nib": "^1.1.2",
     "path": "^0.12.7",
