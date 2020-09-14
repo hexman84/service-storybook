@@ -1,6 +1,6 @@
 <template lang="pug">
     button(class="men-button" :class="[{'-disabled':dataDisabled, '-blue':dataBlue, '-red':dataRed,'-active': dataActive,'-hover':dataHover,'-focus':dataFocused},dataSize]")
-        span(class="data-feather" v-html="iconSvg()") 
+        span(class="data-feather" v-html="iconSvg()")
         span
             slot Test
 </template>
@@ -10,12 +10,12 @@ import './menu-button.styl'
 import { defineComponent } from '@vue/composition-api'
 import { icons } from 'feather-icons'
 export default defineComponent({
-    props: { 
+    props: {
         dataFocused: {
             type: Boolean,
             default: false
         },
-        dataHover:{
+        dataHover: {
             type: Boolean,
             default: false
         },
@@ -41,15 +41,15 @@ export default defineComponent({
         },
         dataIcon: {
             type: String,
-            default:''
+            default: ''
         }
     },
-    setup(props){
+    setup (props) {
         const iconSvg = function () {
-            if (typeof props.dataIcon ==='undefined'|| props.dataIcon === '') return
+            if (typeof props.dataIcon === 'undefined' || props.dataIcon === '') return
             return icons[props.dataIcon].toSvg({ width: 18, height: 18 })
-        } 
-        return {iconSvg}
+        }
+        return { iconSvg }
     }
 })
 

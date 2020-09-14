@@ -40,7 +40,7 @@ module.exports = {
     });
     config.module.rules.push({
         test: /\.styl$/,
-        use: ['style-loader', 'css-loader',
+        use: ['style-loader', 'css-loader?url=false',
              {
                 loader: 'stylus-loader',
                 options: {
@@ -57,7 +57,7 @@ module.exports = {
     });
     config.module.rules.push({
         test: /\.pug$/,
-        loader: 'pug-plain-loader'
+        loader: '@pointotech/pug-plain-loader'
     })
     config.plugins.push(
         new webpack.LoaderOptionsPlugin({
