@@ -8,8 +8,8 @@
 import './group-buttons.styl'
 import { defineComponent } from '@vue/composition-api'
 export default defineComponent({
-    props: { 
-        dataHover:{
+    props: {
+        dataHover: {
             type: Boolean,
             default: false
         },

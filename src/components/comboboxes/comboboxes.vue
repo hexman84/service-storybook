@@ -9,15 +9,14 @@
 </template>
 
 <script lang="ts">
-interface itemInterface{
-    id : number;
-    title : string;
-}
-
 import './comboboxes.styl'
 import { defineComponent, computed, ref } from '@vue/composition-api'
 import { icons } from 'feather-icons'
 
+interface itemInterface{
+    id : number;
+    title : string;
+}
 
 export default defineComponent({
     props: {
@@ -41,71 +40,71 @@ export default defineComponent({
             type: Array,
             default: () => []
         },
-        dataid : {
+        dataid: {
             type: Number,
             default: 1
         },
         dataIcon: {
             type: String,
-            default:''
+            default: ''
         },
         dataSize: {
             type: String,
             default: ''
         }
     },
-    setup(props) {
+    setup (props) {
         const flag = ref(false)
         const iconSvg = function () {
             return icons['chevron-down'].toSvg({ width: 20, height: 20 })
         }
-        const vTitle = computed(() => '-' + props.title + '-');
+        const vTitle = computed(() => '-' + props.title + '-')
         const items = ref<Array <itemInterface>>([
-        {
-            id : 1,
-            title : 'Отель Белладжио'
-        },
-        {
-            id : 2,
-            title: 'Гостиница Космос'
-        },
-        {
-            id : 3,
-            title:'Отель Стэнли'
-        },
-        {
-            id : 4,
-            title:'Отель Гранд-Будапешт'
-        }
-        ]);
-        const onClick = function(event){
-            flag.value = !flag.value
-            if(flag.value === true)
-                event.target.focus()
+            {
+                id: 1,
+                title: 'Отель Белладжио'
+            },
+            {
+                id: 2,
+                title: 'Гостиница Космос'
+            },
+            {
+                id: 3,
+                title: 'Отель Стэнли'
+            },
+            {
+                id: 4,
+                title: 'Отель Гранд-Будапешт'
             }
-        const fullstop = function(){
+        ])
+        const onClick = function (event) {
+            flag.value = !flag.value
+            if (flag.value === true) { event.target.focus() }
+        }
+        const fullstop = function () {
             flag.value = false
         }
-        const nameid = ref(0);
-        const namehostel = computed<String>(() => {
-        const item:itemInterface | undefined = items.value.find(item=>item.id === nameid.value)
-        if (typeof item === 'undefined') return 'Не выбрана'
+        const nameid = ref(0)
+        const namehostel = computed<string>(() => {
+            const item:itemInterface | undefined = items.value.find(item => item.id === nameid.value)
+            if (typeof item === 'undefined') return 'Не выбрана'
             return item.title
         })
-        const poisk = function(index){
+        const poisk = function (index) {
+            // eslint-disable-next-line security/detect-object-injection
             nameid.value = items.value[index].id
             flag.value = false
         }
-    return {
-        vTitle,
-        onClick,
-        items,
-        iconSvg,
-        flag,
-        namehostel,
-        poisk,
-        fullstop
-        };
+        return {
+            vTitle,
+            onClick,
+            items,
+            iconSvg,
+            flag,
+            namehostel,
+            poisk,
+            fullstop
+        }
     }
 })
 </script>

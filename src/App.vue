@@ -1,16 +1,17 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <sbutton>
-
-    </sbutton>
-  </div>
+    <div id="app">
+        <img
+            alt="Vue logo"
+            src="./assets/logo.png"
+        >
+        <sbutton />
+    </div>
 </template>
 
 <script>
-//import sbutton from './button.vue'
+// import sbutton from './button.vue'
 export default {
-  name: 'App',
+    name: 'App'
 //  components: {sbutton}
 }
 </script>
